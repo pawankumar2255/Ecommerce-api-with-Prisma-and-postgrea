@@ -31,7 +31,7 @@ app.delete('/product/:id',deleteProductById)
 app.get('/product/sellername/:sellerId',getProductBySellerId)
 
 
-app.listen(2002,()=>{
+app.listen(process.env.PORT || 2002,()=>{
 
     console.log('server listening ');
 })
