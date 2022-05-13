@@ -5,3 +5,4 @@ set user in postgresql db
 npx prisma init
 npx prisma migrate dev --name <aynything>
 npx prisma studio
+thanks
