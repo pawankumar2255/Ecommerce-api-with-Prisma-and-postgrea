@@ -12,7 +12,17 @@ const {
     getProductById,
     updateProductById,
     deleteProductById,
-    getProductBySellerId} = require('./controllers/product.controller')
+    getProductBySellerId,
+    getProductByUserId
+} = require('./controllers/product.controller')
+
+const {
+    showUser,
+    showUserById,
+    createUser,
+    updateUserById,
+    deleteUserById
+} = require('./controllers/user.controller')
 const app = express()
 
 
@@ -28,7 +38,13 @@ app.get('/product/:id',getProductById)
 app.post('/product',createProduct)
 app.patch('/product/:id',updateProductById)
 app.delete('/product/:id',deleteProductById)
-app.get('/product/sellername/:sellerId',getProductBySellerId)
+app.get('/product/:sellerId/seller',getProductBySellerId)
+app.get('/product/:userId/user',getProductByUserId)
+app.get('/user',showUser)
+app.get('/user/:id',showUserById)
+app.post('/user',createUser)
+app.patch('/user/:id',updateUserById)
+app.delete('/user/:id',deleteUserById)
 
 
 app.listen(process.env.PORT || 2002,()=>{
